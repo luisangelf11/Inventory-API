@@ -25,8 +25,7 @@ namespace Inventario_API_REST.Controllers.Products
         }
 
         [HttpGet]
-        //[Authorize(Policy = Permissions.READ)]
-        [AllowAnonymous]
+        [Authorize(Policy = Permissions.READ)]
         public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int size = 10)
         {
             var result = await _meadiatR.Send(new GetProductsQuery(page, size));

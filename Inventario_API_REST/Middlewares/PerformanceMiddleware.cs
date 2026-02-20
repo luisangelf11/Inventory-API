@@ -16,7 +16,7 @@ namespace Inventario_API_REST.Middlewares
             var method = context.Request.Method.ToUpper();
             var path = context.Request.Path;
 
-            if (totalTime > 500)
+            if (totalTime > 1500)
                 logger.LogWarning($"⚠ SLOW ROUTE [{method}]: {path} [{totalTime}ms]");
             else logger.LogInformation($"[{method}]: {path} [{totalTime}ms]");
         }
