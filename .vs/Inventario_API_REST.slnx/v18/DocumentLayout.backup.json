@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|c:\\users\\luis.fernandez\\downloads\\inventario_api_rest\\inventario_api_rest\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|solutionrelative:inventario_api_rest\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|c:\\users\\luis.fernandez\\downloads\\inventario_api_rest\\inventario_api_rest\\middlewares\\performancemiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|solutionrelative:inventario_api_rest\\middlewares\\performancemiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|c:\\users\\luis.fernandez\\downloads\\inventario_api_rest\\inventario_api_rest\\extensions\\middlewares\\timerlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|solutionrelative:inventario_api_rest\\extensions\\middlewares\\timerlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|c:\\users\\luis.fernandez\\downloads\\inventario_api_rest\\inventario_api_rest\\extensions\\middlewares\\globalexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|solutionrelative:inventario_api_rest\\extensions\\middlewares\\globalexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|c:\\users\\luis.fernandez\\downloads\\inventario_api_rest\\inventario_api_rest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{162AEC26-DD84-A009-A7EA-76F6B3D3E061}|Inventario_API_REST\\Inventario_API_REST.csproj|solutionrelative:inventario_api_rest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Program.cs",
+              "RelativeDocumentMoniker": "Inventario_API_REST\\Program.cs",
+              "ToolTip": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Program.cs",
+              "RelativeToolTip": "Inventario_API_REST\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T19:59:35.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GlobalException.cs",
+              "DocumentMoniker": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Extensions\\Middlewares\\GlobalException.cs",
+              "RelativeDocumentMoniker": "Inventario_API_REST\\Extensions\\Middlewares\\GlobalException.cs",
+              "ToolTip": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Extensions\\Middlewares\\GlobalException.cs",
+              "RelativeToolTip": "Inventario_API_REST\\Extensions\\Middlewares\\GlobalException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T19:59:02.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TimerLog.cs",
+              "DocumentMoniker": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Extensions\\Middlewares\\TimerLog.cs",
+              "RelativeDocumentMoniker": "Inventario_API_REST\\Extensions\\Middlewares\\TimerLog.cs",
+              "ToolTip": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Extensions\\Middlewares\\TimerLog.cs",
+              "RelativeToolTip": "Inventario_API_REST\\Extensions\\Middlewares\\TimerLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T19:57:58.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PerformanceMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Middlewares\\PerformanceMiddleware.cs",
+              "RelativeDocumentMoniker": "Inventario_API_REST\\Middlewares\\PerformanceMiddleware.cs",
+              "ToolTip": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Middlewares\\PerformanceMiddleware.cs",
+              "RelativeToolTip": "Inventario_API_REST\\Middlewares\\PerformanceMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T19:51:09.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Middlewares\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "Inventario_API_REST\\Middlewares\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\luis.fernandez\\Downloads\\Inventario_API_REST\\Inventario_API_REST\\Middlewares\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "Inventario_API_REST\\Middlewares\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T19:31:36.716Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
