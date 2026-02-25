@@ -1,16 +1,13 @@
 ﻿using Inventario_API_REST.Features.Permissions;
-
 namespace Inventario_API_REST.Controllers.Auth
 {
     [ApiController]
     [Route("[controller]")]
-    public class PermissionController(IMediatR _mediatR) : BaseController
+    public class PermissionController(IMediatR _mediatR) : ControllerBase
     {
         [HttpGet]
-        public async Task<IActionResult> GetPermissions()
-        {
-            var result = await _mediatR.Send(new GetPermissionsQuery());
-            return HandleResult(result);
-        }
+        public Task<IActionResult> GetPermissions() =>
+             _mediatR.Send(new GetPermissionsQuery()).ToActionResult();
+
     }
 }
