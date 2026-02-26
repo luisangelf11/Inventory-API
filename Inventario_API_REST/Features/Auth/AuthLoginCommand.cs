@@ -11,14 +11,14 @@ using Response = Result<LoginResponse>;
 
 public record AuthLoginCommand(string Username, string Password) : IRequest<Response>;
 public record LoginResponse(string Token);
-public class LoginHandler(InventoryDbContext _dbContext, IConfiguration _config) : IHandler<AuthLoginCommand, Response>
+public class LoginHandler(InventoryDbContext dbContext, IConfiguration config) : IHandler<AuthLoginCommand, Response>
 {
     public async Task<Response> Handle(AuthLoginCommand request, CancellationToken cancellationToken = default)
     {
         return await AsyncHandler.TryCatchAsync(async () =>
         {
             // Find user and include role
-            var user = await _dbContext.Users
+            var user = await dbContext.Users
                 .Include(u => u.Role)
                 .FirstOrDefaultAsync(u => u.Username == request.Username, cancellationToken);
 
@@ -45,12 +45,12 @@ public class LoginHandler(InventoryDbContext _dbContext, IConfiguration _config)
             }
 
             // Generate JWT
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]!));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: _config["Jwt:Issuer"],
-                audience: _config["Jwt:Audience"],
+                issuer: config["Jwt:Issuer"],
+                audience: config["Jwt:Audience"],
                 claims: claims,
                 expires: DateTime.Now.AddHours(8),
                 signingCredentials: creds
@@ -60,6 +60,6 @@ public class LoginHandler(InventoryDbContext _dbContext, IConfiguration _config)
 
             // Return Token
             return Response.Ok(new LoginResponse(jwtString));
-        }, (ex)=> Response.Failure($"Error Login user: {ex.Message}", 500));
+        }, (ex) => Response.Failure($"Error Login user: {ex.Message}", 500));
     }
 }

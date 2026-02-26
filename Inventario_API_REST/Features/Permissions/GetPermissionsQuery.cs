@@ -8,13 +8,13 @@ using Response = Result<List<PermissionsDto>>;
 public record PermissionsDto(int Id, string Name);
 public record GetPermissionsQuery : IRequest<Response>;
 
-public class PermissionsHandler(InventoryDbContext _dbContext) : IHandler<GetPermissionsQuery, Response>
+public class PermissionsHandler(InventoryDbContext dbContext) : IHandler<GetPermissionsQuery, Response>
 {
     public async Task<Response> Handle(GetPermissionsQuery request, CancellationToken cancellationToken = default)
     {
         return await AsyncHandler.TryCatchAsync(async () =>
         {
-            var permissions = await _dbContext.Permissions
+            var permissions = await dbContext.Permissions
                 .AsNoTracking()
                 .Select(p => new PermissionsDto(p.Id, p.Name))
                 .ToListAsync(cancellationToken);

@@ -3,18 +3,18 @@ namespace Inventario_API_REST.Controllers.Auth
 {
     [ApiController]
     [Route("[controller]")]
-    public class AuthController(IMediatR _mediatR) : ControllerBase
+    public class AuthController(IMediatR mediatR) : ControllerBase
     {
         [HttpPost("Login")]
         [AllowAnonymous]
-        public Task<IActionResult> Login([FromBody] AuthLoginCommand request) =>
-            _mediatR.Send(request).ToActionResult();
+        public Task<IActionResult> Login([FromBody] AuthLoginCommand request, CancellationToken cancellationToken = default) =>
+            mediatR.Send(request, cancellationToken).ToActionResult();
 
 
         [HttpPost("Register")]
         [Authorize(Policy = RolesName.Admin)]
-        public Task<IActionResult> Register([FromBody] AuthRegisterCommand request) =>
-             _mediatR.Send(request).ToActionResult();
+        public Task<IActionResult> Register([FromBody] AuthRegisterCommand request, CancellationToken cancellationToken = default) =>
+             mediatR.Send(request, cancellationToken).ToActionResult();
 
     }
 }

@@ -3,10 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Inventario_API_REST.Database
 {
-    public class InventoryDbContext : DbContext
+    public class InventoryDbContext(DbContextOptions<InventoryDbContext> options) : DbContext(options)
     {
-        public InventoryDbContext(DbContextOptions<InventoryDbContext> options) : base(options) {}
-
         public DbSet<User> Users => Set<User>();
         public DbSet<Role> Roles => Set<Role>();
         public DbSet<Permission> Permissions => Set<Permission>();

@@ -1,7 +1,6 @@
 using Inventario_API_REST.Database;
 using Inventario_API_REST.Extensions.Middlewares;
 using Inventario_API_REST.Extensions.Registers;
-using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,7 +29,6 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.MapScalarApiReference();
-
 }
 
 app.UseHttpsRedirection();

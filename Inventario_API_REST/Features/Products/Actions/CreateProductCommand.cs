@@ -8,7 +8,7 @@ using Response = Result<ProductResponse>;
 public record ProductResponse(int Id, string Name, string Description, int Stock, decimal Cost, decimal Price, decimal EarningUnit);
 public record CreateProductCommand(string Name, string Description, int Stock, decimal Cost, decimal Price, int CreatedById) : IRequest<Response>;
 
-public class CreateProductHandler(InventoryDbContext _dbContext) : IHandler<CreateProductCommand, Response>
+public class CreateProductHandler(InventoryDbContext dbContext) : IHandler<CreateProductCommand, Response>
 {
     public async Task<Response> Handle(CreateProductCommand request, CancellationToken cancellationToken = default)
     {
@@ -31,8 +31,8 @@ public class CreateProductHandler(InventoryDbContext _dbContext) : IHandler<Crea
                 CreatedAt = DateTime.UtcNow
             };
 
-            _dbContext.Products.Add(product);
-            await _dbContext.SaveChangesAsync(cancellationToken);
+            dbContext.Products.Add(product);
+            await dbContext.SaveChangesAsync(cancellationToken);
 
             var response = new ProductResponse(
                 product.Id,

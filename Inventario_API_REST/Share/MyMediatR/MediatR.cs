@@ -2,11 +2,11 @@
 {
     public interface IMediatR
     {
-        Task<TResponse> Send<TResponse>(IRequest<TResponse> request);
+        Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default);
     }
     public class MediatR(IServiceProvider _serviceProvider) : IMediatR
     {
-        public async Task<TResponse> Send<TResponse>(IRequest<TResponse> request)
+        public async Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default)
         {
             var requestType = request.GetType();
             var handlerType = typeof(IHandler<,>).MakeGenericType(requestType, typeof(TResponse));
@@ -20,7 +20,7 @@
             if (method == null)
                 throw new Exception($"The method Handle for {requestType.Name} is not found");
 
-            var task = method.Invoke(handler, new object[] { request, CancellationToken.None }) as Task<TResponse>;
+            var task = method.Invoke(handler, new object[] { request, cancellationToken }) as Task<TResponse>;
 
             if (task == null)
                 throw new Exception("Error to invoke handle: Task was null");

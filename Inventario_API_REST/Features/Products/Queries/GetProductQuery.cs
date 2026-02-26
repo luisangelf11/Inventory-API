@@ -7,7 +7,7 @@ using Response = ResultPaginated<ProductDto>;
 
 public record ProductDto(int Id, string Name, string Description, int Stock, decimal Price, string CreatedBy);
 public record GetProductsQuery(int PageNumber, int PageSize) : IRequest<Response>;
-public class GetProductsHandler(InventoryDbContext _dbContext) : IHandler<GetProductsQuery, Response>
+public class GetProductsHandler(InventoryDbContext dbContext) : IHandler<GetProductsQuery, Response>
 {
     public async Task<Response> Handle(GetProductsQuery request, CancellationToken ct)
     {
@@ -16,8 +16,8 @@ public class GetProductsHandler(InventoryDbContext _dbContext) : IHandler<GetPro
             if (request.PageNumber < 1 || request.PageSize < 1) 
                 return Response.Failure("The current page cannot be less than 1 and the size cannot be less than 1.");
 
-            var totalCount = await _dbContext.Products.CountAsync();
-            var items = await _dbContext.Products
+            var totalCount = await dbContext.Products.CountAsync();
+            var items = await dbContext.Products
                 .AsNoTracking()
                 .Include(p => p.CreatedBy)
                 .OrderByDescending(p => p.Id).Skip((request.PageNumber - 1) * request.PageSize)

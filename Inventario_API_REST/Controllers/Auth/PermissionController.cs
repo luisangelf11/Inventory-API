@@ -3,11 +3,10 @@ namespace Inventario_API_REST.Controllers.Auth
 {
     [ApiController]
     [Route("[controller]")]
-    public class PermissionController(IMediatR _mediatR) : ControllerBase
+    public class PermissionController(IMediatR mediatR) : ControllerBase
     {
         [HttpGet]
-        public Task<IActionResult> GetPermissions() =>
-             _mediatR.Send(new GetPermissionsQuery()).ToActionResult();
-
+        public Task<IActionResult> GetPermissions(CancellationToken cancellationToken = default) =>
+             mediatR.Send(new GetPermissionsQuery(), cancellationToken).ToActionResult();
     }
 }

@@ -8,7 +8,7 @@ using Response = Result<UpdateProductResponse>;
 
 public record UpdateProductResponse(int Id, string Name, string Description, int Stock, decimal Cost, decimal Price, decimal EarningUnit);
 public record UpdateProductCommand(int Id, string Name, string Description, int Stock, decimal Cost, decimal Price) : IRequest<Response>;
-public class UpdateProductHandler(InventoryDbContext _dbContext) : IHandler<UpdateProductCommand, Response>
+public class UpdateProductHandler(InventoryDbContext dbContext) : IHandler<UpdateProductCommand, Response>
 {
     public async Task<Response> Handle(UpdateProductCommand request, CancellationToken ct = default)
     {
@@ -17,7 +17,7 @@ public class UpdateProductHandler(InventoryDbContext _dbContext) : IHandler<Upda
             if (request.Price < request.Cost)
                 return Response.Failure("The selling price cannot be lower than the cost.", 400);
 
-            var product = await _dbContext.Products
+            var product = await dbContext.Products
                 .FirstOrDefaultAsync(x => x.Id == request.Id, ct);
 
             if (product == null)
@@ -29,7 +29,7 @@ public class UpdateProductHandler(InventoryDbContext _dbContext) : IHandler<Upda
             product.Stock = request.Stock;
             product.Cost = request.Cost;
 
-            await _dbContext.SaveChangesAsync(ct);
+            await dbContext.SaveChangesAsync(ct);
 
             return Response.Ok(MapToResponse(product));
         }, (ex) => Response.Failure($"Error updating product: {ex.Message}", 500));
